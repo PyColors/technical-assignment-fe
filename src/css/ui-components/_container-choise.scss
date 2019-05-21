@@ -1,0 +1,77 @@
+$dark: #292929;
+$light: #efefef;
+$red: #D91E18;
+$green: #2ECC71;
+$blue: #4183D7;
+$small: 40em;
+.container-choise {
+	position: absolute;
+	margin-top: 10px;
+}
+
+.button-wrap {
+	position: relative;
+	z-index: 1;
+	@media (max-width: $small) {
+		margin-top: -1.5em;
+	}
+}
+
+.button-label {
+	width: 110px;
+	display: inline-block;
+	padding: 0 5px;
+	cursor: pointer;
+	color: $dark;
+	border-radius: 0.25em;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+	transition: 0.3s;
+	user-select: none;
+	h1 {
+		font-size: 25px;
+	}
+	&:hover {
+		background: darken($light, 10%);
+		color: darken($dark, 10%);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 -3px 0 rgba(0, 0, 0, 0.32);
+	}
+	&:active {
+		transform: translateY(2px);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.22);
+	}
+	@media (max-width: $small) {
+		padding: 0em 1em 3px;
+		margin: 0.25em;
+	}
+}
+
+#scissors:checked+.button-label {
+	background: $green;
+	color: $light;
+	&:hover {
+		background: darken($green, 5%);
+		color: darken($light, 5%);
+	}
+}
+
+#paper:checked+.button-label {
+	background: $red;
+	color: $light;
+	&:hover {
+		background: darken($red, 5%);
+		color: darken($light, 5%);
+	}
+}
+
+#rock:checked+.button-label {
+	background: $blue;
+	color: $light;
+	&:hover {
+		background: darken($blue, 5%);
+		color: darken($light, 5%);
+	}
+}
+
+.hidden {
+	display: none;
+}

@@ -1,0 +1,25 @@
+#content--left {
+	margin-top: 30px;
+	width: 38%;
+	vertical-align: middle;
+	display: inline-block;
+	figure {
+		img {
+			width: 80%;
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			padding-bottom: 10px;
+			border-bottom: 8px solid #e59a0a;
+		}
+		figcaption {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	#content-left-human-player {
+		font-size: 33px;
+		color: #E89C22;
+		text-shadow: 2px 0 0 #222, -2px 0 0 #222, 0 2px 0 #222, 0 -2px 0 #111, 1px 1px #111, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111;
+	}
+}

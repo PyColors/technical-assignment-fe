@@ -1,0 +1,33 @@
+#content--right {
+	margin-top: 30px;
+	vertical-align: middle;
+	display: inline-block;
+	width: 30%;
+
+
+	figure {
+
+		img {
+			width: 80%;
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			border-bottom: 8px solid #e59a0a;
+			padding-bottom: 10px;
+
+		}
+
+		figcaption {
+			display: inline-block;
+			vertical-align: middle;
+			color: #E89C22;
+			margin: 0 auto;
+			font-size: 35px;
+			text-shadow: 2px 0 0 #222, -2px 0 0 #222, 0 2px 0 #222, 0 -2px 0 #111, 1px 1px #111, -1px -1px 0 #111, 1px -1px 0 #111, -1px 1px 0 #111;
+		}
+	}
+
+	#content-right-computer-1 {
+		font-size: 33px;
+	}
+}
