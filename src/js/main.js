@@ -1,7 +1,5 @@
 require('../css/main.scss');
 import { getDragonBallUserChoice } from './getDragonBallUserChoice';
-import { gameMode } from "./gameMode";
-
 import ComputerChoice from './ComputerChoice';
 
 
@@ -11,13 +9,15 @@ window.onload = function() {
 
 let player1;
 
+
 /**
+ * Logic to determine who won between user vs computer or computer vs computer
  *
  * @param userChoice
  * @param computerChoice
  * @returns {string}
  */
-const determineWinner = (userChoice, computerChoice) => {
+export const winner = (userChoice, computerChoice) => {
 
 	if (userChoice !== computerChoice) {
 		if (userChoice === 'rock') {
@@ -45,9 +45,32 @@ const determineWinner = (userChoice, computerChoice) => {
 };
 
 
+/**
+ * Determine if the user will play or a computer vs computer
+ */
+const gameMode = () => {
+
+	let checkbox = document.querySelector("input[name=checkbox]");
+
+	checkbox.addEventListener( 'change', function() {
+
+		let contentDragonBall = document.getElementById("content-dragon-ball");
+
+		if(this.checked) {
+			contentDragonBall.style.display = 'none';
+			player1 = 'computer 1'
+
+		} else {
+			contentDragonBall.style.display = 'block';
+			player1 = 'user'
+		}
+	});
+
+};
+
 const playGame = () => {
 
-	// Instance ComputerChoice class
+	// Instance ComputerChoice classgir
 	let random = new ComputerChoice();
 	const computerChoice = random.choise;
 	const computerChoice2 = random.choise;
@@ -55,22 +78,13 @@ const playGame = () => {
 	let dragonBall = document.querySelector('input[name = "dragon-ball"]:checked').value;
 	const userChoice = getDragonBallUserChoice(dragonBall);
 
-
-	console.log('You threw: ' + userChoice);
-
-	console.log('The computer threw: ' + computerChoice);
-
-	//console.log(determineWinner(userChoice, computerChoice));
-	console.log(determineWinner(computerChoice, computerChoice2));
-
-
 	// Inject result into the vue
 	// Create result game
 	let result = document.getElementById("result");
-	result.innerHTML = determineWinner(userChoice, computerChoice);
+	result.innerHTML = winner(userChoice, computerChoice);
 
 	let humanPlayer = document.getElementById("content-left-human-player");
-	humanPlayer.innerHTML = `User: ${userChoice} - Computer: ${computerChoice2}`;
+	humanPlayer.innerHTML = `User: ${userChoice} <br /> Computer 1: ${computerChoice2}`;
 
 	let computerOne = document.getElementById("content-right-computer-1");
 	computerOne.innerHTML = `Computer 2: ${computerChoice}`;
