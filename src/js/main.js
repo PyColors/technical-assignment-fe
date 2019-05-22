@@ -2,13 +2,14 @@ require('../css/main.scss');
 import { getDragonBallUserChoice } from './getDragonBallUserChoice';
 import ComputerChoice from './ComputerChoice';
 
-
+/**
+ * Execute gameMode() immediately after a page has been loaded.
+ */
 window.onload = function() {
 	gameMode();
 };
 
 let player1;
-
 
 /**
  * Logic to determine who won between user vs computer or computer vs computer
@@ -68,6 +69,9 @@ const gameMode = () => {
 
 };
 
+/**
+ * FUnction to play the game
+ */
 const playGame = () => {
 
 	// Instance ComputerChoice classgir
@@ -75,10 +79,11 @@ const playGame = () => {
 	const computerChoice = random.choise;
 	const computerChoice2 = random.choise;
 
+	// Get user choice
 	let dragonBall = document.querySelector('input[name = "dragon-ball"]:checked').value;
 	const userChoice = getDragonBallUserChoice(dragonBall);
 
-	// Inject result into the vue
+	// Inject result
 	// Create result game
 	let result = document.getElementById("result");
 	result.innerHTML = winner(userChoice, computerChoice);
