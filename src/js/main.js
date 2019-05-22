@@ -3,7 +3,7 @@ import { getDragonBallUserChoice } from './getDragonBallUserChoice';
 import ComputerChoice from './ComputerChoice';
 
 /**
- * Execute gameMode() immediately after a page has been loaded.
+ * Execute gameMode() immediately after the page has been loaded.
  */
 window.onload = function() {
 	gameMode();
