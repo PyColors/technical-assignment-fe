@@ -18,7 +18,7 @@ let player1;
  * @param computerChoice
  * @returns {string}
  */
-export const winner = (userChoice, computerChoice) => {
+const winner = (userChoice, computerChoice) => {
 
 	if (userChoice !== computerChoice) {
 		if (userChoice === 'rock') {
@@ -66,11 +66,10 @@ const gameMode = () => {
 			player1 = 'user'
 		}
 	});
-
 };
 
 /**
- * FUnction to play the game
+ * Run the game
  */
 const playGame = () => {
 
@@ -93,10 +92,9 @@ const playGame = () => {
 
 	let computerOne = document.getElementById("content-right-computer-1");
 	computerOne.innerHTML = `Computer 2: ${computerChoice}`;
-
 };
 
 
-// Play a game
+// Button play game
 let playButton = document.getElementById("play");
 playButton.addEventListener("click", playGame);
